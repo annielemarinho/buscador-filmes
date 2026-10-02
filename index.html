@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Buscador de Filmes</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <h1><i class="fa-solid fa-film"></i> Buscador de Filmes</h1>
+                <div class="busca">
+                    <input type="search" name="buscar" id="buscar" placeholder="Buscar Filme">
+                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <ul>
+                    <li><a href="#" data-genero-id="28">Ação</a></li>
+                    <li><a href="#" data-genero-id="35">Comédia</a></li>
+                    <li><a href="#" data-genero-id="10749">Romance</a></li>
+                    <li><a href="#" data-genero-id="27">Terror</a></li>
+                </ul>
+                <a href="watchlist.html">Minha Watchlist</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <h1 class="section-title">Filmes em Destaque</h1>
+        <section>
+
+        </section>
+    </main>
+    <dialog>
+        <img src="#" alt="poster do filme [nome]">
+        <div class="info-modal">
+            <h2></h2>
+            <div class="info-secundaria">
+                <span class="nota"></span>
+                <span class="ano"></span>
+                <span class="generos"></span>
+            </div>
+            <p class="sinopse"></p>
+            <h3 class="titulo-provedores">Disponível em:</h3>
+            <div class="onde-assistir">
+            </div>
+            <p class="atribuicao-justwatch">Dados fornecidos por JustWatch</p>
+            <div class="botoes-modal">
+                <button type="button" id="fechar">Fechar</button>
+                <button type="button" id="watchlist">Adicionar à Watchlist</button>
+            </div>
+        </div>
+    </dialog>
+    <script src="js/script.js" type="module"></script>
+</body>
+
+</html>
