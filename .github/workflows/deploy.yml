@@ -18,7 +18,7 @@ jobs:
           url: ${{ steps.deployment.outputs.page_url }}
         steps:
             - name: Checkout do repositorio
-              uses: actions/chekout@v4
+              uses: actions/checkout@v4
             - name: Criar arquivo compartilhado
               run: printf 'export const apiKey = "${{ secrets.TMDB_API_KEY }}";' > js/compartilhado.js
             - name: Configurar GitHub Pages
