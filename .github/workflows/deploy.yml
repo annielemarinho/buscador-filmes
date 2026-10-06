@@ -20,7 +20,9 @@ jobs:
             - name: Checkout do repositorio
               uses: actions/checkout@v4
             - name: Criar arquivo compartilhado
-              run: printf 'export const apiKey = "${{ secrets.TMDB_API_KEY }}";' > js/compartilhado.js
+              run: |
+                cp js/compartilhado.example.js js/compartilhado.js
+                sed -i 's/SUA_CHAVE_AQUI/${{ secrets.TMDB_API_KEY }}/' js/compartilhado.js
             - name: Configurar GitHub Pages
               uses: actions/configure-pages@v5
             - name: Preparar arquivos para o Pages
