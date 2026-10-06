@@ -1,0 +1,34 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        environment: 
+          name: github-pages
+          url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Checkout do repositorio
+              uses: actions/chekout@v4
+            - name: Criar arquivo compartilhado
+              run: printf 'export const apiKey = "${{ secrets.TMDB_API_KEY }}";' > js/compartilhado.js
+            - name: Configurar GitHub Pages
+              uses: actions/configure-pages@v5
+            - name: Preparar arquivos para o Pages
+              uses: actions/upload-pages-artifact@v4
+              with: 
+                path: .
+            - name: Publicar no GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
+              
+       
